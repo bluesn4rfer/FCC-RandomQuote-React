@@ -44,14 +44,17 @@ function App() {
   	return (
 		<div className="container d-flex justify-content-center">
 	    		<div id="quote-box">
-				<div className="d-flex flex-row">
-					<div className="d-flex flex-fill justify-content-start py-3 px-0 text-secondary">{index+1}/{quotes.length}</div>
-					<div className="d-flex flex-fill justify-content-end"><a target="_blank" rel="noreferrer" id="tweet-quote" href={"https://twitter.com/intent/tweet?text="+quote}><button className="my-3 mx-0 btn btn-outline-info">Share on Tweeter</button></a></div>
-				</div>
+				<div className="d-flex justify-content-end"><a target="_blank" rel="noreferrer" id="tweet-quote" href={"https://twitter.com/intent/tweet?text="+quote}><button className="my-3 mx-0 btn btn-outline-info">Share on Tweeter</button></a></div>
 				<div className="d-flex flex-row justify-content-center my-3">
-					<button id="previous-quote" className={previousBtnClass} onClick={showPreviousQuote} >Previous</button>
-					<button id="new-quote" className="mx-3 btn btn-outline-primary" onClick={showRandomQuote} >Random Quote</button>
-					<button id="next-quote" className={nextBtnClass} onClick={showNextQuote} >Next</button>
+					<div className="d-flex flex-fill m-3 h-100">
+						<div className="d-grid w-100"><button id="previous-quote" className={previousBtnClass} onClick={showPreviousQuote} >Previous</button></div>
+					</div>
+					<div className="d-flex flex-fill my-3 mx-0 h-100">
+						<div className="d-grid w-100"><button id="new-quote" className="btn btn-outline-primary" onClick={showRandomQuote} >Random Quote</button></div>
+					</div>
+					<div className="d-flex flex-fill m-3 h-100">
+						<div className="d-grid w-100"><button id="next-quote" className={nextBtnClass} onClick={showNextQuote} >Next</button></div>
+					</div>
 				</div>
 				<div className="m-3">
 					<h1 id="text" className="text-center">{quote}</h1>
